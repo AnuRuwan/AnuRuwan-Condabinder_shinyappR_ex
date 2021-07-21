@@ -5,6 +5,9 @@
 .local/
 .profile
 .gitconfig
+.conda/
+.rstudio/
+.subversion/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
