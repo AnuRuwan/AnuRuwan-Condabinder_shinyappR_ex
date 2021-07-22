@@ -2,7 +2,6 @@ library(shiny)
 
 
 
-
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     
@@ -66,15 +65,13 @@ ui <- fluidPage(
             plotOutput("linearplot"),
             tableOutput("contents"),
             tableOutput("lmtable"),    # table added
-            h5("correlation coefficient"),
+            h5("correlation coefficient r2"),
             verbatimTextOutput("corr") # text box added
             
             
         )
     )
 )
-
-
 
 
 # Define server logic required to draw a histogram
@@ -95,7 +92,7 @@ server <- function(input, output) {
     })
     
     corr<- reactive({
-        cor( dataInput()$x, dataInput()$y) # correlation coeficient
+        cor(dataInput()$x, dataInput()$y) # correlation coeficient
     })
     
     output$distPlot <- renderPlot({
@@ -107,7 +104,6 @@ server <- function(input, output) {
             x <- dataInput()$x
             y <- dataInput()$y
             plot(x,y)
-            #reg <- lm(y ~ x) # Deleted
             abline(reg ())
         })
         
